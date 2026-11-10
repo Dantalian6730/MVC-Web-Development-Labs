@@ -1,0 +1,39 @@
+{% extends 'base_layout.html' %}
+
+{% block title %}
+    Список статей
+{% endblock title %}
+
+{% block content %}
+
+<main>
+    <h1>Список статей</h1>
+
+    <div class="articles">
+
+        {% for element in articles %}
+
+            <div class="article_item">
+
+                <h2>
+                    <a href="{% url 'article_detail' slug=element.slug %}">
+                        {{ element.title }}
+                    </a>
+                </h2>
+
+                <p>{{ element.snippet }}</p>
+
+                <time>{{ element.date }}</time>
+
+            </div>
+
+        {% empty %}
+
+            <p>Статьи пока отсутствуют.</p>
+
+        {% endfor %}
+
+    </div>
+</main>
+
+{% endblock content %}

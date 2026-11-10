@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+            Django Articles
+        {% endblock title %}
+    </title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+
+            <a href="{% url 'article_list' %}" class="logo">
+                 <span class="logo-icon">📚</span>
+                 <span>Django Articles</span>
+            </a>
+
+            <nav class="navigation">
+                <a href="/">Главная</a>
+                <a href="{% url 'article_list' %}">Статьи</a>
+            </nav>
+
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+
+    <footer class="site-footer">
+        <p>Учебный проект Django — Лабораторная работа №6</p>
+    </footer>
+
+</body>
+</html>

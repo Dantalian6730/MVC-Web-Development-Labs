@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    padding: 40px;
+    background-color: #f4f6f9;
+    color: #263238;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #183153;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.articles {
+    display: grid;
+    gap: 20px;
+}
+
+.article_item,
+.article-detail {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.article_item h2 {
+    margin-top: 0;
+}
+
+.article_item a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.article_item a:hover {
+    text-decoration: underline;
+}
+
+.article_item p,
+.article-detail p {
+    line-height: 1.7;
+}
+
+time {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Шапка сайта */
+
+.site-header {
+    background-color: #183153;
+    padding: 20px 40px;
+    margin: -40px -40px 40px;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Навигация */
+
+.navigation {
+    display: flex;
+    gap: 25px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navigation a:hover {
+    color: #93c5fd;
+}
+
+/* Подвал сайта */
+
+.site-footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 30px;
+    line-height: 1;
+}
+
+/* Изображение статьи */
+
+.article-image {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    margin: 0 auto 25px;
+    border-radius: 12px;
+}
+
+/* Страница статьи */
+
+.article-detail {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.article-detail h1 {
+    margin-bottom: 20px;
+}
+
+.article-detail p {
+    line-height: 1.7;
+}
