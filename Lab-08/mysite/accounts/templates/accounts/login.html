@@ -1,15 +1,20 @@
 {% extends 'base_layout.html' %}
 
 {% block title %}
-    Вход в систему
+Вход в систему
 {% endblock title %}
 
 {% block content %}
 
 <main>
-    <div class="article-detail">
+    <div class="auth-container">
 
-        <h1>Вход в систему</h1>
+        <h1>Вход в аккаунт</h1>
+
+        <p>
+            Авторизуйтесь, чтобы продолжить
+            работу с сайтом статей.
+        </p>
 
         <form action="{% url 'login' %}" method="post">
             {% csrf_token %}
@@ -21,9 +26,11 @@
             </button>
         </form>
 
-        <p>
+        <p class="auth-link">
             Нет аккаунта?
-            <a href="{% url 'signup' %}">Зарегистрироваться</a>
+            <a href="{% url 'signup' %}">
+                Зарегистрироваться
+            </a>
         </p>
 
     </div>

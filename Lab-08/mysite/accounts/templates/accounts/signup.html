@@ -1,25 +1,35 @@
 {% extends 'base_layout.html' %}
 
 {% block title %}
-    Регистрация
+Регистрация
 {% endblock title %}
 
 {% block content %}
 
 <main>
-    <div class="article-detail">
+    <div class="auth-container">
 
-        <h1>Регистрация пользователя</h1>
+        <h1>Создание аккаунта</h1>
+
+        <p>
+            Зарегистрируйтесь, чтобы пользоваться
+            возможностями нашего сайта статей.
+        </p>
 
         <form action="{% url 'signup' %}" method="post">
             {% csrf_token %}
+
             {{ form.as_p }}
 
             <button type="submit">
                 Зарегистрироваться
             </button>
-
         </form>
+
+        <p class="auth-link">
+            Уже есть аккаунт?
+            <a href="{% url 'login' %}">Войти</a>
+        </p>
 
     </div>
 </main>

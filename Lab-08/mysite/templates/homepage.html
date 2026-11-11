@@ -1,11 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Homepage</title>
-</head>
-<body>
-    <h1>{{ header }}</h1>
-    <p>{{ message }}</p>
-</body>
-</html>
+{% extends 'base_layout.html' %}
+
+{% block title %}
+Главная страница
+{% endblock title %}
+
+{% block content %}
+
+<main class="info-page">
+    <section class="info-card">
+
+        <h1>Добро пожаловать в Django Articles!</h1>
+
+        <p>
+            Django Articles — учебный веб-проект,
+            предназначенный для публикации и просмотра
+            информационных статей.
+        </p>
+
+        <p>
+            На нашем сайте можно ознакомиться
+            с опубликованными материалами,
+            а также зарегистрировать собственный аккаунт.
+        </p>
+
+        <div class="page-actions">
+            <a href="/articles/" class="page-button">
+                Смотреть статьи
+            </a>
+
+            <a href="{% url 'about' %}" class="page-button secondary">
+                О проекте
+            </a>
+        </div>
+
+    </section>
+</main>
+
+{% endblock content %}

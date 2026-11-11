@@ -3,26 +3,42 @@ from django.shortcuts import render
 
 def homepage(request):
     data = {
-        'header': 'Homepage',
-        'message': 'Welcome to My Site!'
+        'header': 'Django Articles',
+        'message': 'Добро пожаловать на сайт статей!'
     }
-    return render(request, 'homepage.html', context=data)
+
+    return render(
+        request,
+        'homepage.html',
+        context=data
+    )
 
 
 def about(request):
-    header = 'About us'
-    staff = ['John Nichols', 'John Rogers', 'Timothy Smith']
-    director = {
-        'name': 'David Lee',
-        'img': '/director.jpg'
-    }
-    address = ('20 W 34th St.', 'New York', 'NY 10001', 'USA')
-
     data = {
-        'header': header,
-        'staff': staff,
-        'director': director,
-        'address': address
+        'header': 'О проекте Django Articles',
+        'description': (
+            'Django Articles — учебное веб-приложение '
+            'для публикации и просмотра статей.'
+        ),
+        'features': [
+            'Просмотр списка статей',
+            'Просмотр подробной информации о статье',
+            'Отображение изображений',
+            'Регистрация пользователей',
+            'Авторизация и выход из аккаунта'
+        ],
+        'technologies': [
+            'Python',
+            'Django',
+            'HTML',
+            'CSS',
+            'SQLite'
+        ]
     }
 
-    return render(request, 'about.html', context=data)
+    return render(
+        request,
+        'about.html',
+        context=data
+    )
